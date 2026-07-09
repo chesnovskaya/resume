@@ -80,7 +80,7 @@ strong {
 
 ul[type="square"] {
       margin: 10px 0 20px;
-      padding-left: 22px;
+      padding-left: 16px;
 }
 
 ul[type="square"] li.par:not(.italics) {
@@ -190,4 +190,17 @@ a:hover {
           font-size: 13px;
           padding: 5px 12px;
   }
+}
+
+th.par {
+        color: #ffffff;
+        font-size: 19px;
+        font-weight: 700;
+        letter-spacing: 0.2px;
+}
+
+@media (max-width: 640px) {
+        th.par {
+                  font-size: 16px;
+        }
 }
