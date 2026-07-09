@@ -1,27 +1,193 @@
-body {
-    background-color: #F7ECDE;
+:root {
+      --color-bg: #eef3f2;
+      --color-card: #ffffff;
+      --color-primary: #2f6f6b;
+      --color-primary-dark: #234f4c;
+      --color-secondary: #d9a441;
+      --color-text: #33393b;
+      --color-text-light: #5c6670;
+      --color-border: #e1e8e6;
 }
 
-table,th,td {
-    border: rgb(250, 217, 156) 3px solid ;
-    border-radius:2px;
-    border-collapse: collapse;/* Убираем двойные линии между ячейками */
+* {
+      box-sizing: border-box;
+}
+
+html {
+      background: var(--color-bg);
+}
+
+body {
+      background: var(--color-card);
+      color: var(--color-text);
+      font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+      max-width: 860px;
+      margin: 48px auto;
+      padding: 48px 56px;
+      border-radius: 18px;
+      box-shadow: 0 10px 40px rgba(47, 111, 107, 0.12), 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+      margin: 12px 0 24px;
 }
 
 .heading-top {
-    color: dimgray;
-    font-size: 30px;
+      color: var(--color-primary-dark);
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 4px;
+      letter-spacing: 0.3px;
 }
 
 .heading-middle {
-    color: dimgray;
+      color: var(--color-primary);
+      font-size: 21px;
+      font-weight: 600;
+      margin-top: 40px;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--color-secondary);
 }
 
-.italics {
-    font-style: italic;
+h4.par {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--color-primary-dark);
+      margin-top: 24px;
+      margin-bottom: 6px;
 }
 
 .par {
-    color: #52616b;
-    font-size: 18px;
+      color: var(--color-text-light);
+      font-size: 17px;
+      margin: 8px 0;
+}
+
+.italics {
+      font-style: italic;
+}
+
+strong {
+      color: var(--color-text);
+}
+
+ul[type="square"] {
+      margin: 10px 0 20px;
+      padding-left: 22px;
+}
+
+ul[type="square"] li.par:not(.italics) {
+      margin-bottom: 8px;
+}
+
+ul[type="square"]:has(li.italics.par) {
+      list-style: none;
+      padding-left: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 12px 0 24px;
+}
+
+li.italics.par {
+      font-style: normal;
+      background: rgba(47, 111, 107, 0.08);
+      color: var(--color-primary-dark);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+      border: 1px solid rgba(47, 111, 107, 0.18);
+      transition: background 0.2s ease, transform 0.2s ease, color 0.2s ease;
+}
+
+li.italics.par:hover {
+      background: var(--color-secondary);
+      color: #ffffff;
+      border-color: var(--color-secondary);
+      transform: translateY(-2px);
+}
+
+table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 28px;
+      font-size: 15px;
+}
+
+table, th, td {
+      border: 1px solid var(--color-border);
+      border-radius: 4px;
+}
+
+th {
+      background: var(--color-primary);
+      color: #ffffff;
+      font-weight: 600;
+      text-align: left;
+      padding: 10px 14px;
+}
+
+td {
+      padding: 10px 14px;
+      background: #fafcfc;
+}
+
+tr:hover td {
+      background: rgba(217, 164, 65, 0.08);
+}
+
+a {
+      color: var(--color-primary);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+a:hover {
+      color: var(--color-secondary);
+      border-bottom-color: var(--color-secondary);
+}
+
+@media (max-width: 640px) {
+      body {
+              margin: 0;
+              padding: 28px 20px;
+              border-radius: 0;
+              box-shadow: none;
+      }
+
+  .heading-top {
+          font-size: 26px;
+  }
+
+  .heading-middle {
+          font-size: 18px;
+          margin-top: 28px;
+  }
+
+  .par {
+          font-size: 15px;
+  }
+
+  img {
+          max-width: 160px;
+  }
+
+  table {
+          display: block;
+          overflow-x: auto;
+          white-space: nowrap;
+  }
+
+  li.italics.par {
+          font-size: 13px;
+          padding: 5px 12px;
+  }
 }
